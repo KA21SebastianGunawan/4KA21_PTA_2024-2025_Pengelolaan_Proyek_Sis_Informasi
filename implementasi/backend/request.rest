@@ -1,0 +1,137 @@
+// Create a user
+POST http://192.168.1.15:5001/users
+Content-Type: application/json
+
+{
+    "name": "Tiaranisarsd Staff",
+    "email": "staff@gmail.com",
+    "password": "123456",
+    "confPassword": "123456",
+    "role": "staff"
+}
+
+###
+// Get All Users
+GET http://192.168.1.15:5001/users
+
+###
+// Get Single User
+GET http://192.168.1.15:5001/users/e0f9f62f-069d-49e0-9343-a858519f3270
+
+###
+// Update User
+PATCH http://192.168.1.15:5001/users/084c9ed6-6dfc-4fb8-9a4b-6b08b7718a67
+Content-Type: application/json
+
+{
+    "name": "Tiaranisa",
+    "email": "admin@gmail.com",
+    "password": "",
+    "confPassword": "",
+    "role": "admin"
+}
+
+###
+// Delete a User
+DELETE http://192.168.1.15:5001/users/348f434f-1612-4fd1-a7b6-caf5bf9f660e
+
+###
+// Login Staff
+POST http://192.168.1.15:5001/login
+Content-Type: application/json
+
+{
+    "email": "staff@gmail.com",
+    "password": "123456"
+}
+
+###
+// Login Admin
+POST http://192.168.1.15:5001/login
+Content-Type: application/json
+
+{
+    "email": "admin@gmail.com",
+    "password": "123456"
+}
+
+###
+// Me
+GET http://192.168.1.15:5001/me
+
+###
+// logOut
+DELETE http://192.168.1.15:5001/logout
+
+###
+// Get All Jadwal
+GET http://192.168.1.15:5001/jadwal
+
+###
+// Get Jadwal By id
+GET http://192.168.1.15:5001/jadwal/bykategori?kategori=remaja&rw=8
+
+###
+// Create Jadwal Pelayanan
+POST http://192.168.1.15:5001/jadwal
+Content-Type: application/json
+
+{
+    "rw": 8,
+    "kategori": "lansia",
+    "jadwal": "2024-10-15 10:00:00"
+
+}
+
+###
+// Update Jadwal Pelayanan
+PATCH http://192.168.1.15:5001/jadwal/e149d820-7e7f-4de3-8c95-1210862f1aae
+Content-Type: application/json
+
+{
+    "rw": "9",
+    "kategori": "balita",
+    "jadwal": "2024-10-15 10:00:00"
+
+}
+
+###
+// Delete Jadwal Pelayanan
+DELETE http://192.168.1.15:5001/jadwal/a2cac7e2-67e7-468a-aba2-c36cfea981bb
+###
+// Get All Dokumentasi
+GET http://192.168.1.15:5001/dokumentasi
+
+###
+// Get Dokumentasi By id
+GET http://192.168.1.15:5001/dokumentasi/8930ce11-3317-472d-82bd-99a7589c501e
+
+###
+// Create Dokumentasi
+POST http://192.168.1.15:5001/dokumentasi
+Content-Type: application/json
+
+{
+    "image": "gambarstunting",
+    "judul": "stunting rw8",
+    "keterangan": "dokumentasi anak stunting"
+
+}
+
+###
+// Update Dokumentasi
+PATCH http://192.168.1.15:5001/dokumentasi/8930ce11-3317-472d-82bd-99a7589c501e
+Content-Type: application/json
+
+{
+    "rw": "rw 08 updated",
+    "kategori": "remaja",
+    "jadwal": "2024-10-15 10:00:00"
+
+}
+
+###
+// Delete Dokumentasi
+DELETE http://192.168.1.15:5001/dokumentasi/8930ce11-3317-472d-82bd-99a7589c501e
+
+
