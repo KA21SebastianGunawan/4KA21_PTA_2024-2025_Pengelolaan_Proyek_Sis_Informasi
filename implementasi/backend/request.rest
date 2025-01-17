@@ -3,11 +3,11 @@ POST http://192.168.1.15:5001/users
 Content-Type: application/json
 
 {
-    "name": "Tiaranisarsd Staff",
-    "email": "staff@gmail.com",
+    "name": "Tiaranisarsd Admin",
+    "email": "admin@gmail.com",
     "password": "123456",
     "confPassword": "123456",
-    "role": "staff"
+    "role": "admin"
 }
 
 ###
@@ -41,7 +41,7 @@ POST http://192.168.1.15:5001/login
 Content-Type: application/json
 
 {
-    "email": "staff@gmail.com",
+    "email": "staffRW1@gmail.com",
     "password": "123456"
 }
 
@@ -65,11 +65,11 @@ DELETE http://192.168.1.15:5001/logout
 
 ###
 // Get All Jadwal
-GET http://192.168.1.15:5001/jadwal
+GET http://192.168.1.15:5001/jadwal/
 
 ###
 // Get Jadwal By id
-GET http://192.168.1.15:5001/jadwal/bykategori?kategori=remaja&rw=8
+GET http://localhost:5001/jadwal/85ed4a7d-27b8-4779-a93c-031281b6f10d
 
 ###
 // Create Jadwal Pelayanan
@@ -77,7 +77,7 @@ POST http://192.168.1.15:5001/jadwal
 Content-Type: application/json
 
 {
-    "rw": 8,
+    "rw": 9,
     "kategori": "lansia",
     "jadwal": "2024-10-15 10:00:00"
 
@@ -85,26 +85,27 @@ Content-Type: application/json
 
 ###
 // Update Jadwal Pelayanan
-PATCH http://192.168.1.15:5001/jadwal/e149d820-7e7f-4de3-8c95-1210862f1aae
+PATCH http://192.168.1.15:5001/jadwal/85ed4a7d-27b8-4779-a93c-031281b6f10d
 Content-Type: application/json
 
 {
-    "rw": "9",
-    "kategori": "balita",
+    "rw": 8,
+    "kategori": "Lansia",
     "jadwal": "2024-10-15 10:00:00"
 
 }
 
 ###
 // Delete Jadwal Pelayanan
-DELETE http://192.168.1.15:5001/jadwal/a2cac7e2-67e7-468a-aba2-c36cfea981bb
+DELETE http://192.168.1.15:5001/jadwal/3c07b6ab-bfd8-41e0-b790-de7323695aaf
+
 ###
 // Get All Dokumentasi
 GET http://192.168.1.15:5001/dokumentasi
 
 ###
 // Get Dokumentasi By id
-GET http://192.168.1.15:5001/dokumentasi/8930ce11-3317-472d-82bd-99a7589c501e
+GET http://192.168.1.15:5001/dokumentasi/72757d4b-e6af-45d4-a744-b3659f29dcc3
 
 ###
 // Create Dokumentasi
@@ -112,7 +113,7 @@ POST http://192.168.1.15:5001/dokumentasi
 Content-Type: application/json
 
 {
-    "image": "gambarstunting",
+    "image": "gambarstunting.png",
     "judul": "stunting rw8",
     "keterangan": "dokumentasi anak stunting"
 
@@ -120,13 +121,13 @@ Content-Type: application/json
 
 ###
 // Update Dokumentasi
-PATCH http://192.168.1.15:5001/dokumentasi/8930ce11-3317-472d-82bd-99a7589c501e
+PATCH http://192.168.1.15:5001/dokumentasi/59acf520-db84-4eed-ad5b-a6739e782377
 Content-Type: application/json
 
 {
-    "rw": "rw 08 updated",
-    "kategori": "remaja",
-    "jadwal": "2024-10-15 10:00:00"
+    "image": "1736826029350-618069712.png",
+    "judul": "testt",
+    "keterangan": "test doctor updated 2"
 
 }
 
@@ -134,4 +135,261 @@ Content-Type: application/json
 // Delete Dokumentasi
 DELETE http://192.168.1.15:5001/dokumentasi/8930ce11-3317-472d-82bd-99a7589c501e
 
+###
+// Get All Laporan Remaja
+GET http://192.168.1.15:5001/laporanRemaja
 
+###
+// Get Laporan Remaja By id
+GET http://192.168.1.15:5001/laporanRemaja/1a9d3056-7edd-44f4-9fda-dced6a2611b3
+
+###
+// Create Dokumentasi
+POST http://192.168.1.15:5001/laporanRemaja
+Content-Type: application/json
+
+{
+    "rw": 8,
+    "kategori": "remaja",
+    "nik": "31754643644",
+    "nama": "tiara rw 8",
+    "tanggalLahir": "2024-10-15",
+    "jenisKelamin": "Perempuan",
+    "alamat": "Jalan Kayu Manis 9",
+    "merokok": "tidak",
+    "sistol": 120,
+    "diastol": 80,
+    "beratBadan": 25,
+    "tinggiBadan": 150,
+    "lingkarPerut": 62
+
+}
+
+###
+// Update Laporan Remaja
+PATCH http://192.168.1.15:5001/laporanRemaja/1a9d3056-7edd-44f4-9fda-dced6a2611b3
+Content-Type: application/json
+
+{
+    "rw": 9,
+    "nik": "31754643644",
+    "nama": "tiara updated",
+    "tanggalLahir": "2024-10-15",
+    "jenisKelamin": "Perempuan",
+    "alamat": "Jalan Kayu Manis 9",
+    "merokok": "tidak",
+    "sistol": 120,
+    "diastol": 80,
+    "beratBadan": 25,
+    "tinggiBadan": 150,
+    "lingkarPerut": 62
+
+}
+
+###
+// Delete Laporan Remaja
+DELETE http://192.168.1.15:5001/laporanRemaja/a5f6afda-28fa-4131-a6e3-19df1ae8dfa0
+
+###
+// Get All Laporan Balita
+GET http://192.168.1.15:5001/laporanBalita
+
+###
+// Get Laporan Balita By id
+GET http://192.168.1.15:5001/laporanBalita/2c10f5cb-b312-4951-81aa-964015c8a214
+
+###
+// Create Laporan Balita
+POST http://192.168.1.15:5001/laporanBalita
+Content-Type: application/json
+
+{
+    "rw": 10,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "balita",
+    "nama": "tiara rw 9",
+    "nama_orangtua": "wiwi",
+    "tanggal_lahir": "2024-10-15",
+    "jenis_kelamin": "Perempuan",
+    "alamat": "Jalan Kayu Manis 9",
+    "berat_badan": 25,
+    "tinggi_badan": 15,
+    "lingkar_kepala": 62,
+    "suhu_tubuh": 36,
+    "detak_jantung": 120,
+    "status_gizi": "gizi baik",
+    "status_kesehatan": "sehat"
+}
+
+###
+// Update Laporan Balita
+PATCH http://192.168.1.15:5001/laporanBalita/2c10f5cb-b312-4951-81aa-964015c8a214
+Content-Type: application/json
+
+{
+    "rw": 8,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "balita",
+    "nama": "tiara rw 8",
+    "nama_orangtua": "wiwi",
+    "tanggal_lahir": "2024-10-15",
+    "jenis_kelamin": "Perempuan",
+    "alamat": "Jalan Kayu Manis 9",
+    "berat_badan": 25,
+    "tinggi_badan": 15,
+    "lingkar_kepala": 62,
+    "suhu_tubuh": 36,
+    "detak_jantung": 120,
+    "status_gizi": "gizi baik",
+    "status_kesehatan": "sehat"
+}
+
+###
+// Delete Laporan Balita
+DELETE http://192.168.1.15:5001/laporanBalita/e1bcacd0-2ed2-4970-a5b6-f870672998e2
+
+###
+// Get All Laporan Lansia
+GET http://192.168.1.15:5001/laporanLansia
+
+###
+// Get Laporan Lansia By id
+GET http://192.168.1.15:5001/laporanLansia/14feda1e-5677-49c0-bbd3-9d3b19b4c008
+
+###
+// Create Laporan Lansia
+POST http://192.168.1.15:5001/laporanLansia
+Content-Type: application/json
+
+{
+    "rw": 10,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "balita",
+    "nama": "tiara rw 10",
+    "jenis_kelamin": "Perempuan",
+    "tekanan_darah": "120/80 mmHg",
+    "berat_badan": 65.50,
+    "tinggi_badan": 160.50,
+    "gula_darah_puasa": 90.5,
+    "gula_darah_sesudah_makan": 120.5,
+    "kolesterol": 200.5,
+    "asam_urat": "6.5",
+    "status_kesehatan": "tekanan darah tinggi"
+}
+
+###
+// Update Laporan Lansia
+PATCH http://192.168.1.15:5001/laporanLansia/14feda1e-5677-49c0-bbd3-9d3b19b4c008
+Content-Type: application/json
+
+{
+    "rw": 8,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "Lansia",
+    "nama": "tiara rw 8 updated",
+    "jenis_kelamin": "Perempuan",
+    "tekanan_darah": "120/80 mmHg",
+    "berat_badan": 65.50,
+    "tinggi_badan": 160.50,
+    "gula_darah_puasa": 90.5,
+    "gula_darah_sesudah_makan": 120.5,
+    "kolesterol": 200.5,
+    "asam_urat": 6.5,
+    "status_kesehatan": "tekanan darah tinggi"
+}
+
+###
+// Delete Laporan Lansia
+DELETE http://192.168.1.15:5001/laporanLansia/836384e9-93f3-4f41-add7-f967b7e41489
+
+###
+// Get All Laporan Poswindu
+GET http://192.168.1.15:5001/laporanPoswindu
+
+###
+// Get Laporan Poswindu By id
+GET http://192.168.1.15:5001/laporanPoswindu/df1fbe87-f3ca-4f04-ba7d-4ef37d6af39d
+
+###
+// Create Laporan Poswindu
+POST http://192.168.1.15:5001/laporanPoswindu
+Content-Type: application/json
+
+{
+    "rw": 10,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "balita",
+    "nama": "tiara rw 10",
+    "jenis_kelamin": "Perempuan",
+    "usia_kehamilan": "4 minggu",
+    "tekanan_darah": "120/80 mmHg",
+    "berat_badan": 65.50,
+    "tinggi_badan": 160.50,
+    "detak_jantung_janin": 90,
+    "lingkar_lengan_atas": 12.5,
+    "hemoglobin": 20.5,
+    "protein_urin": "positif",
+    "status_kehamilan": "normal"
+}
+
+###
+// Update Laporan Poswindu
+PATCH http://192.168.1.15:5001/laporanPoswindu/df1fbe87-f3ca-4f04-ba7d-4ef37d6af39d
+Content-Type: application/json
+
+{
+    "rw": 8,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "Poswindu",
+    "nama": "tiara rw 8 updated",
+    "jenis_kelamin": "Perempuan",
+    "usia_kehamilan": "4 minggu",
+    "tekanan_darah": "120/80 mmHg",
+    "berat_badan": 65.50,
+    "tinggi_badan": 160.50,
+    "detak_jantung_janin": 90,
+    "lingkar_lengan_atas": 12.5,
+    "hemoglobin": 20.5,
+    "protein_urin": "positif",
+    "status_kehamilan": "normal"
+}
+
+###
+// Delete Laporan Poswindu
+DELETE http://192.168.1.15:5001/laporanPoswindu/aa18110e-0288-4d94-af3f-de9dd429ce19
+
+###
+// Get All Laporan Admin
+GET http://192.168.1.15:5001/laporanAdmin
+
+###
+// Get Laporan Admin By id
+GET http://192.168.1.15:5001/laporanAdmin/14d417fd-a28c-4e47-a951-b37118f890a3
+
+###
+// Create Laporan Admin
+POST http://192.168.1.15:5001/laporanAdmin
+Content-Type: application/json
+
+{
+    "rw": 10,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "balita",
+    "dokumen_laporan": "laporan_balita_rw8.pdf"
+}
+
+###
+// Update Laporan Admin
+PATCH http://192.168.1.15:5001/laporanAdmin/14d417fd-a28c-4e47-a951-b37118f890a3
+Content-Type: application/json
+
+{
+    "rw": 10,
+    "bulan_pemeriksaan": "februari",
+    "kategori": "balita",
+    "dokumen_laporan": "laporan_balita_rw10.pdf"
+}
+
+###
+// Delete Laporan Admin
+DELETE http://192.168.1.15:5001/laporanAdmin/a784ba3e-8cee-4f24-a38a-5d0b5d2aeb25

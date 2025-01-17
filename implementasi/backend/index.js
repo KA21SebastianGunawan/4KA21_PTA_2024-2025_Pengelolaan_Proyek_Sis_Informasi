@@ -8,9 +8,26 @@ import UsersRoute from "./routes/UsersRoute.js";
 import JadwalRoute from "./routes/JadwalRoute.js";
 import DokumentasiRoute from "./routes/DokumentasiRoute.js";
 import AuthRoute from "./routes/AuthRoute.js";
+import LaporanRemajaRoute from "./routes/LaporanRemajaRoute.js";
+import LaporanBalitaRoute from "./routes/LaporanBalitaRoute.js";
+import path from "path";
+import bodyParser from 'body-parser';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import LaporanLansiaRoute from "./routes/LaporanLansiaRoute.js";
+import LaporanPoswinduRoute from "./routes/LaporanPoswinduRoute.js";
+import LaporanAdmin from "./routes/LaporanAdmin.js";
+
 dotenv.config();
 
 const app = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+app.use('/uploads/dokumentasi', express.static(path.join(__dirname, 'dokumentasi')));
+app.use('/uploads/laporanAdmin/', express.static(path.join(__dirname, 'laporanAdmin')));
 
 const sessionStore = SequelizeStore(session.Store);
 
@@ -42,6 +59,13 @@ app.use(UsersRoute);
 app.use(JadwalRoute);
 app.use(DokumentasiRoute);
 app.use(AuthRoute);
+app.use(LaporanRemajaRoute);
+app.use(LaporanBalitaRoute);
+app.use(LaporanLansiaRoute);
+app.use(LaporanPoswinduRoute);
+app.use(LaporanAdmin);
+
+app.use(bodyParser.urlencoded({ extended: true }));
 
 // store.sync();
 
